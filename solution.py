@@ -1,14 +1,29 @@
 def solution(s):
-    #​ ​Your​ ​code​ ​here
     res = ""
-    for l in s:
-        print(l)
+    for letter in s:
+        if letter.isnumeric():
+            res += numberic_code
+            res += codes[letter]
+        if letter.isupper():
+            res += upper_code
+            res += codes[letter.lower()]
+        else:
+            res += codes[letter]
     return res
 
-solution("abc")
-
-upper = '000001'
+upper_code = '000001'
+numeric_code = '001111'
 codes = {
+    '0': '010110',
+    '1': '100000',
+    '2': '110000',
+    '3': '100100',
+    '4': '100110',
+    '5': '100010',
+    '6': '110100',
+    '7': '110110',
+    '8': '110010',
+    '9': '010100',
     ' ': '000000',
     'a': '100000',
     'b': '110000',
@@ -37,3 +52,7 @@ codes = {
     'y': '101111',
     'z': '101011',
 }
+
+print(solution("code"))
+print(solution("Braille"))
+print(solution("The quick brown fox jumped over the lazy dog"))
