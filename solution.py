@@ -1,7 +1,7 @@
 def solution(s):
     res = ""
     for letter in s:
-        if letter.isnumeric():
+        if unicode(letter, 'utf-8').isnumeric():
             res += numberic_code
             res += codes[letter]
         if letter.isupper():
@@ -52,7 +52,3 @@ codes = {
     'y': '101111',
     'z': '101011',
 }
-
-print(solution("code"))
-print(solution("Braille"))
-print(solution("The quick brown fox jumped over the lazy dog"))
